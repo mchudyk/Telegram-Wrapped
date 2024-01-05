@@ -1,0 +1,222 @@
+[
+    {
+        "Message ID": "000001",
+        "Date": "2023-12-28 09:31:38+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Hey👋! Just got home from the gym. How's your day going?",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000002",
+        "Date": "2023-12-28 09:31:02+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Pretty busy. Still at work, wrapping up a project. You know, the one for our international client.",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000003",
+        "Date": "2023-12-28 09:30:33+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Oh yeah, the one with the tight deadline? Must be stressful with everything happening in the world right now, especially with the ongoing global economic shifts.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000004",
+        "Date": "2023-12-28 09:31:02+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Tell me about it. And with the current political tensions in Europe, it's been a challenge coordinating with our partners there.",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000005",
+        "Date": "2023-12-28 09:31:38+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Speaking of which, did you hear about the recent summit? Seems like there might be some positive developments.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000006",
+        "Date": "2023-12-28 10:22:34+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Yeah, I caught a bit on the news during lunch. Fingers crossed it leads to something good. By the way, how's your sister doing in London with all this?",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000007",
+        "Date": "2023-12-28 10:26:38+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "She's managing. Says the city's a bit on edge, but she's keeping safe. Changed her commute to avoid the crowded areas.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000008",
+        "Date": "2023-12-28 10:56:45+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Smart move. Oh, and I meant to ask, did you decide on your vacation plans? Still thinking of Japan?",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000009",
+        "Date": "2023-12-28 15:41:52+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Definitely leaning towards Japan. But with the current travel restrictions, I'm waiting a bit before booking anything.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000010",
+        "Date": "2023-12-28 16:05:36+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Makes sense. Hey, I have to jump into another meeting. Let's catch up later?",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000011",
+        "Date": "2023-12-28 16:05:44+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Sure thing 😉. Good luck with the meeting. Talk soon!",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000012",
+        "Date": "2023-12-29 19:50:13+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "",
+        "Media Type": "MessageMediaPhoto(spoiler=False, photo=Photo(id=0000000000000000001, access_hash=-00000000000000000001, file_reference=b'\\x03\\x00\\x06\\xf4\\....', date=datetime.datetime(2023, 12, 25, 0, 18, 53, tzinfo=datetime.timezone.utc), sizes=[PhotoStrippedSize(type='i', bytes=b'\\x01(\\x1e\\xbb\\xb4b\\xb0\\xcf...'), PhotoSize(type='m', w=240, h=320, size=15600), PhotoSize(type='x', w=600, h=800, size=62389), PhotoSizeProgressive(type='y', w=960, h=1280, sizes=[16164, 34563, 44190, 81957, 116658])], dc_id=2, has_stickers=False, video_sizes=[]), ttl_seconds=None)",
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000013",
+        "Date": "2023-12-29 19:50:43+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Morning👋! Just sent you a photo of the new office layout. What do you think?",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000014",
+        "Date": "2023-12-29 19:59:38+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Looks great 🔥! Very modern. Here's a pic of the Japanese garden I told you about. Still dreaming of that trip.",
+        "Media Type": "MessageMediaPhoto(spoiler=False, photo=Photo(id=0000000000000000002, access_hash=-00000000000000000002, file_reference=b'\\x03\\x00\\x06\\xf4\\....', date=datetime.datetime(2023, 12, 25, 0, 18, 53, tzinfo=datetime.timezone.utc), sizes=[PhotoStrippedSize(type='i', bytes=b'\\x01(\\x1e\\xbb\\xb4b\\xb0\\xcf...'), PhotoSize(type='m', w=240, h=320, size=15600), PhotoSize(type='x', w=600, h=800, size=62389), PhotoSizeProgressive(type='y', w=960, h=1280, sizes=[16164, 34563, 44190, 81957, 116658])], dc_id=2, has_stickers=False, video_sizes=[]), ttl_seconds=None)",
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000015",
+        "Date": "2023-12-29 20:04:06+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Beautiful! Definitely a must-visit. How was your day? You mentioned hitting the gym again today.",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000016",
+        "Date": "2023-12-29 20:07:40+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Yeah, had a good workout. But the gym was packed! Seems everyone's trying to stay fit despite the hectic world news.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000017",
+        "Date": "2023-12-29 20:09:52+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "No kidding. Speaking of news, did you see the latest update about the tech conference? They're shifting it online due to the travel issues.",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000018",
+        "Date": "2023-12-29 20:11:00+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Saw that. Makes sense. I'm attending a webinar on computational science later. Thought it might be useful for our project.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000019",
+        "Date": "2023-12-29 20:12:28+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "Good call. Here's a quick update on the project status 😁.",
+        "Media Type": "MessageMediaDocument(nopremium=False, spoiler=False, document=Document(id=0000000000000000003, access_hash=-00000000000000000003, file_reference=b'\\x01\\x00\\x06\\xf7\\xbae...', date=datetime.datetime(2023, 12, 29, 20, 13, 48, tzinfo=datetime.timezone.utc), mime_type='audio/ogg', size=256847, dc_id=2, attributes=[DocumentAttributeAudio(duration=66, voice=True, title=None, performer=None, waveform=b'\\x90E\\\\#\\xe4\\xd5\\xc6\\...')], thumbs=[], video_thumbs=[]), alt_document=None, ttl_seconds=None)",
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000020",
+        "Date": "2023-12-29 20:13:48+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Thanks for the audio. I'll give it a listen during lunch. Oh, and my sister called last night – says London's feeling more relaxed now.",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    },
+    {
+        "Message ID": "000021",
+        "Date": "2023-12-29 20:18:36+00:00",
+        "Sender ID": "000000002", 
+        "Sender Username": "PersonB",
+        "Text": "That's good to hear. Relief for you too, I bet. Alright, I've got to head into a meeting. Let's catch up in the evening?",
+        "Media Type": "", 
+        "Reply To": "000000001",
+        "Forwarded From": ""
+    },
+    {
+        "Message ID": "000022",
+        "Date": "2023-12-29 20:19:15+00:00",
+        "Sender ID": "000000001", 
+        "Sender Username": "PersonA",
+        "Text": "Sure thing. Have a good one 🤍!",
+        "Media Type": "", 
+        "Reply To": "000000002",
+        "Forwarded From": "" 
+    }
+]

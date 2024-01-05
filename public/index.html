@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Wrapped</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="welcome-message" class="full-screen">
+        <h1>Ready To See Your Telegram Wrapped?</h1>
+        <button id="start-button">Start</button>
+    </div>
+
+    <div id="chat-interface" class="full-screen" style="display: none;">
+        <h1>Your Telegram Wrapped Is Ready</h1>
+        <p id="askanyquesions">Scroll down to see your summary and ask any question!</p>
+        <div class="input-group">
+            <input type="text" id="userPrompt" placeholder="Ask me a question...">
+            <button onclick="sendPrompt()">Submit</button>
+        </div>
+        <div id="chatgpt-answers"></div> 
+    </div>
+
+    <div id="image-section"></div>
+    <div id="qa-container"></div>
+
+
+    <script>
+        let conversationHistory = [];
+        let summaryof = "";
+    
+        document.getElementById('start-button').addEventListener('click', function() {
+            initialTrain();
+            setTimeout(() => { 
+                calculateAndDisplayAnswers(); 
+            }, 1000); 
+            document.getElementById('welcome-message').style.display = 'none';
+            document.getElementById('chat-interface').style.display = 'block';
+            document.getElementById('chatgpt-answers').style.display = 'block'; 
+        });
+    
+        async function initialTrain() {
+            try {
+                const response = await fetch('/load-chat-data');
+                const data = await response.json();
+                conversationHistory = data.chatData;
+
+                const summary = await summarizeConversation();
+                if (summary) {
+                    generateAndDisplaySummaryImage(summary);
+                } else {
+                    console.error('No summary was generated.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        } 
+
+        async function summarizeConversation() {
+            try {
+                var userText = "Based on the conversation, create a generic summary of the lives of Person A and Person B without mentioning their personal information. Make sure to include the context of their lives as well.";
+                conversationHistory.push({ role: 'system', content: userText });
+
+                const response = await fetch('/get-response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ messages: conversationHistory }),
+                });
+
+                const data = await response.json();
+                return data.answer;
+            } catch (error) {
+                console.error('Error:', error);
+                throw new Error('Failed to generate summary.');
+            }
+        }
+
+        function calculateAndDisplayAnswers() {
+
+            calculateMostFrequentEmojis()
+                .then(mostFrequentEmojis => {
+                    displayAnswer("The most frequent emojis used", mostFrequentEmojis);
+                });
+
+            
+            calculateAvgMessagesPerDay()
+                .then(avgMessagesPerDay => {
+                    displayAnswer("The average number of messages per day", avgMessagesPerDay);
+                });
+
+
+            calculateVideoMessages()
+                .then(videoMessages => {
+                    displayAnswer("The total number of photo, video, and audio messages", videoMessages);
+                });
+        }
+
+
+        function calculateVideoMessages() {
+            return fetch('/video-messages')
+                .then(response => response.json())
+                .then(data => {
+                    return `${data.count}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching total number of video messages:', error);
+                    return 'Error fetching total number of video messages';
+                });
+        }
+
+    
+        function calculateAvgMessagesPerDay() {
+            return fetch('/average-messages-per-day')
+                .then(response => response.json())
+                .then(data => {
+                    return `${data.average.toFixed(0)}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching average messages per day:', error);
+                    return 'Error fetching average messages per day';
+                });
+        }
+
+
+        function calculateMostFrequentEmojis() {
+            return fetch('/emoji-stats')
+                .then(response => response.json())
+                .then(data => {
+                    // Only return the emoji characters, not the counts
+                    const emojiList = data.map(([emoji, _]) => emoji).join('  ');
+                    return `${emojiList}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching emoji stats:', error);
+                    return 'Error fetching emoji stats';
+                });
+        }
+
+
+        function generateAndDisplaySummaryImage(summary) {
+            if (!summary) {
+                console.error('No summary provided to generate image.');
+                return;
+            }
+
+            fetch('/generate-summary-image?summaryof=' + encodeURIComponent(summary))
+                .then(response => response.json())
+                .then(data => {
+                    const imageDiv = document.createElement('div');
+                    imageDiv.className = 'image-section';
+                    imageDiv.innerHTML = `<img src="${data.imageUrl}" alt="Conversation Summary" style="max-width:100%; height:auto;">`;
+                    document.getElementById('image-section').appendChild(imageDiv);
+                })
+                .catch(error => {
+                    console.error('Error fetching summary image:', error);
+                });
+        }
+
+
+        function displayAnswer(question, answer) {
+            const qaDiv = document.createElement('div');
+            qaDiv.className = 'qa-section full-screen';
+            qaDiv.innerHTML = `<h2>${question}</h2><p>${answer}</p>`;
+            document.getElementById('qa-container').appendChild(qaDiv);
+        }
+
+
+        function sendPrompt() {
+            var userText = document.getElementById('userPrompt').value;
+            if (userText.trim() === '') return;
+
+            conversationHistory.push({ role: 'system', content: userText });
+
+            fetch('/get-response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ messages: conversationHistory }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('chatgpt-answers').textContent = data.answer; 
+                conversationHistory.push({ role: 'system', content: data.answer });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('chatgpt-answers').textContent = 'Error fetching response';
+            });
+
+            document.getElementById('userPrompt').value = '';
+        }
+
+
+        function addMessageToChat(sender, message) {
+            const chatWindow = document.getElementById('chat');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = sender === 'User' ? 'user-message' : 'gpt-message';
+            messageDiv.textContent = message; 
+            chatWindow.appendChild(messageDiv);
+        }
+
+    </script>
+
+</body>
+</html>
